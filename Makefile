@@ -6,17 +6,17 @@ all: vsix
 	@echo "vsix created"
 
 vsix: build
-	./node_modules/.bin/vsce package
+	.\node_modules\.bin\vsce package
 
 publish:
 	./node_modules/.bin/vsce publish
 
 build: $MONO_DEBUG_RELEASE
-	node_modules/.bin/tsc -p ./src/typescript
+	.\node_modules\.bin\tsc.cmd -p ./src/typescript
 	@echo "build finished"
 
 debug: $MONO_DEBUG_DEBUG
-	node_modules/.bin/tsc -p ./src/typescript
+	.\node_modules\.bin\tsc.cmd -p ./src/typescript
 	@echo "build finished"
 
 $MONO_DEBUG_RELEASE:
